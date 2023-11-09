@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "c8907fbc-c219-4149-823a-3c751ca076c7",
+		"name": "UXtoUI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin Routes",
+			"item": [
+				{
+					"name": "Admin Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"email\": \"adminprabatest@yopmail.com\", \r\n    \"password\" : \"Aa123456*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/admin/login",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"user_name\" : \"prabakaran\", \r\n    \"email\": \"adminprabatest@yopmail.com\", \r\n    \"password\" : \"Aa123456*\", \r\n    \"confirm_password\": \"Aa123456*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/admin/registration",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"admin",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner Routes",
+			"item": [
+				{
+					"name": "Add Banner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"jksahfkjhasbnjbvnvbndfkjhdsaf\",\r\n    \"content\": \"sajlfhsajf kjsahfk jhgsafk sahfkj sakjfhkjsa fhkjsaf \",\r\n    \"imageUrl\": \"http://localhost:9000/uploads/imagesoiouououo_2.png\",\r\n    \"validFrom\":  \"2023-11-10\",\r\n    \"validTo\": \"2023-11-12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/banner/create",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"banner",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get banner list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AppUrl}}/banner/getAll",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"banner",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Routes",
+			"item": [
+				{
+					"name": "Product Rating Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"654c91515f5e8aa40519affd\",\r\n    \"userId\": \"654c89c52237811789034c58\",\r\n    \"rating\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/product/addRating",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"addRating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Review Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"654c89c52237811789034c28\",\r\n    \"userId\": \"654c89c52237811789034cer\",\r\n    \"review\": \"Best One\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/product/addReview",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"addReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"product five\",\r\n    \"type\": 0,\r\n    \"imageUrl\": \"http://localhost:9000/uploads/imagesoiouououo_2.png\",\r\n    \"price\": 999\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{AppUrl}}/product/create",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AppUrl}}/product/getAll",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Rating Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AppUrl}}/product/topRated",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"topRated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Special Offer Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{AppUrl}}/product/topOffer",
+							"host": [
+								"{{AppUrl}}"
+							],
+							"path": [
+								"product",
+								"topOffer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
